@@ -30,6 +30,7 @@
     {% endif %}
 
     {{ content_for_header }}
+    {{ 'noveriq.css' | asset_url | stylesheet_tag }}
 </head>
 
 <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
@@ -158,9 +159,8 @@
         {{ content_for_layout }}
     </main>
 
-    <footer>
-        {% sections 'footer-group' %}
-    </footer>
+{% section 'noveriq-footer' %}
+
 </div>
 
 {% render 'cart-drawer', render_wrapper: true %}
